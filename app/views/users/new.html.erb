@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="wrapper">
+     <div class="alert alert-<%= message_type %>"><%= message %></div>
+   <% end %>
+    <h1 class="title">アカウント登録</h1>
+  <%= form_with(model:@user, local:true)do |f| %>
+  <%= f.label :name, '名前' %>
+  <%= f.text_field :name %>
+    <%= f.label :email, 'メールアドレス' %>
+  <%= f.text_field :email %>
+    <%= f.label :password, 'パスワード' %>
+  <%= f.password_field :password, placeholder:"パスワードを入力してください。" %>
+  <%= f.label :password_confirmation, 'パスワード確認' %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit "送信" %>
+  <% end %>
+  </div>
+</div>
