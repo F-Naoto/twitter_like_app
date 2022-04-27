@@ -23,19 +23,29 @@ class UsersController < ApplicationController
   end
 
   def edit
-
+    @user = User.find(params[:id])
   end
 
   def update
-
+    @user = User.find(params[:id])
+    if @user.update(update_user)
+      flash[:notice] = "ユーザー情報を変更しました。"
+      redirect_to root_url
+    else
+      redirect_to edit_user_path
+    end
+    
   end
 
   def destroy
-
   end
 
   private
   def user_strong_params
     params.require(:user).permit(:name, :email,:password, :password_confirmation)
+  end
+
+  def update_user
+    params.require(:user).permit(:name, :email)
   end
 end
