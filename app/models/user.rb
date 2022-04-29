@@ -8,4 +8,8 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+
+  def feed
+    Post.where("user_id:?", self.id)
+  end
 end

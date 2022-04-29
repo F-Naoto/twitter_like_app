@@ -2,9 +2,18 @@
 <div class="container">
   <div class="wrapper">
     <h1 class="title">UserProfilePage</h1>
-   <div class="personal_profile">
-    <div class="name">Name:<%=@user.name%></div>
-    <div class="email">Email:<%=@user.email%></div>
+    <div class="personal_profile">
+      <div class="name">Name:<%=@user.name%></div>
+      <div class="email">Email:<%=@user.email%></div>
     </div>
+
+  <% if @user.posts.any? %>
+      <% @posts.each do |post| %>
+    <div class="posts_list">
+      <%= post.content %>  
+    </div>
+      <% end %>
+  <% end %>
   </div>
+  <%= link_to "投稿", new_post_path %>
 </div>

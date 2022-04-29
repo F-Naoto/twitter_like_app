@@ -1,2 +1,9 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<h1>Home</h1>
+<h2>Welcome to Twitter_like_app</h2>
+
+<% if logged_in?%>
+<%= link_to "投稿", new_post_path, class:"signup" %>
+<% else %>
+<%= link_to "ログイン", login_path, class:"signup" %>
+<%= link_to "新規作成", new_user_path, class:"signup" %>
+<% end %>

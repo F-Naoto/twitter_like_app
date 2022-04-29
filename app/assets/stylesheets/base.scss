@@ -1,0 +1,118 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+body {
+  font-family: "Kameron", "Noto Sans JP", sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+.font-sm {
+  font-size: 14px;
+}
+.font-md {
+  font-size: 17px;
+}
+.font-lr {
+  font-size: 17px;
+}
+.font-lg {
+  font-size: 25px;
+}
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+.mb-lg {
+  margin-bottom: 80px !important;
+}
+.pb-sm {
+  padding-bottom: 16px !important;
+}
+.pb-lg {
+  padding-bottom: 80px !important;
+}
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+}
+.main-title {
+  @extend .font-lg;
+  font-weight: 600;
+  margin-bottom: 0;
+  display: block;
+}
+.sub-title {
+  @extend .font-sm;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+#main-content {
+  position: relative;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: -1;
+}
+
+#container {
+  position: relative;
+  z-index: 10;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+
+  &.triggered {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  &__nav {
+    display: none;
+  }
+
+  &__ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__li {
+    margin-left: 20px;
+
+    & > a {
+      text-decoration: none !important;
+      text-transform: uppercase;
+    }
+  }
+
+  & .logo {
+    font-size: 38px;
+    justify-content: center;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

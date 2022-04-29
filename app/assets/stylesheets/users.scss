@@ -1,13 +1,20 @@
+@import 'base.scss';
+
 .wrapper{
   width: 80%;
   margin:0 auto;
+  .title{
+    text-align: center;
+  }
   .personal_profile{
     color: white;
     padding: 20px;
     background-color: grey;
     border-radius: 10px;
   }
-  .title{
-    text-align: center;
+  .posts_list{
+    @extend .font-md;
+    background-color: #00ffff;
+    border-radius: 10px;
   }
 }
