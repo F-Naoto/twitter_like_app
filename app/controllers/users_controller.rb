@@ -1,14 +1,12 @@
 class UsersController < ApplicationController
-
+before_action :logged_in_user, only:%i[create destroy]
   def index
     @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
-    if logged_in?
-    @posts = Post.where(user_id:current_user.id)
-    end
+    @posts = Post.where(user_id:@user.id)
   end
 
   def new
@@ -50,5 +48,11 @@ class UsersController < ApplicationController
 
   def update_user
     params.require(:user).permit(:name, :email)
+  end
+
+  def logged_in_user
+    unless logged_in?
+    redirect_to login_path
+    end
   end
 end
