@@ -1,14 +1,19 @@
 class PostsController < ApplicationController
 
-  def show
-  end
+
+  
 
   def new
-
+  @post = Post.new
   end
 
   def create
-
+    @post = current_user.posts.build(content_params)
+    if @post.save
+      redirect_to root_url
+    else
+      render new_user_path
+    end
   end
 
   def edit
@@ -21,5 +26,10 @@ class PostsController < ApplicationController
 
   def destroy
 
+  end
+
+  private
+  def content_params
+  params.require(:post).permit(:content)
   end
 end
