@@ -7,14 +7,30 @@
       <div class="email">Email:<%=@user.email%></div>
     </div>
 
+  <div>
+  <button id="post_btn">投稿</button>
+  </div>
+
+  <div id="post_screen">
+    <%= form_with(model:current_user.posts.build, local:false) do |f| %>
+    <%= f.label :content, '内容', id:'post_label' %>
+    <%= f.text_field :content, id:'post_field' %>
+    
+    <%= f.submit "送る" , id:'send_btn'%>
+    <% end %>
+  </div>
+
   <% if @user.posts.any? %>
       <% @posts.each do |post| %>
     <div class="posts_list">
       <%= post.content %> 
       <%= link_to "削除", "/posts/#{post.id}", method: :delete, data:{confirm:"本当に削除しますか？"} %> 
+      <%= link_to "編集", edit_post_path(post), id:"post_edit"%>
     </div>
       <% end %>
   <% end %>
   </div>
-  <%= link_to "投稿", new_post_path if logged_in?%>
+
 </div>
+
+<%= javascript_pack_tag 'post_edit' %>

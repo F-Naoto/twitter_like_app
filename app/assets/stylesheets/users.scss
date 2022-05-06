@@ -14,7 +14,7 @@
   }
   .posts_list{
     @extend .font-md;
-    background-color: #00ffff;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
   }
 }

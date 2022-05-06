@@ -1,0 +1,29 @@
+#post_screen{
+display: none;
+margin: 0 auto;
+background: rgba(0, 0, 0, 0.6);  
+border-radius:10px;
+width: 100%;
+height: 100px;
+
+
+& #post_label{
+padding-left: 20px;
+display: block;
+}
+& #post_field{
+  margin: 0 auto;  
+  height: 50px;
+  width: 80%;
+  display: block;
+  @extend .mb-sm;
+}
+#send_btn{
+  display: block;
+  margin: 0 auto;
+}
+}
+
+#post_screen.is_active {
+  display: block;
+  }

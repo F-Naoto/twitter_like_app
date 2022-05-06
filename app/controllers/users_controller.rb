@@ -47,7 +47,7 @@ before_action :logged_in_user, only:%i[create destroy]
   end
 
   def update_user
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
   def logged_in_user

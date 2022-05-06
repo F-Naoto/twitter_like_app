@@ -1,0 +1,25 @@
+#edit_screen {
+  margin: 0 auto;
+  background-color: lightcoral;
+  border-radius: 10px;
+  height: 150px;
+  width: 50%;
+}
+
+#edit_screen #post_label {
+  padding-left: 20px;
+  display: block;
+}
+
+#edit_screen #post_field {
+  margin: 0 auto;
+  height: 50px;
+  width: 80%;
+  display: block;
+}
+
+#edit_screen #edit_btn {
+  display: block;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=post_edit.css.map */
