@@ -6,10 +6,11 @@
       <div class="name">Name:<%=@user.name%></div>
       <div class="email">Email:<%=@user.email%></div>
     </div>
-
+  <% if @user.id == current_user.id %>
   <div>
   <button id="post_btn">投稿</button>
   </div>
+  <% end %>
 
   <div id="post_screen">
     <%= form_with(model:current_user.posts.build, local:false) do |f| %>
@@ -24,8 +25,11 @@
       <% @posts.each do |post| %>
     <div class="posts_list">
       <%= post.content %> 
+      
+      <% if @user.id == current_user.id %> 
       <%= link_to "削除", "/posts/#{post.id}", method: :delete, data:{confirm:"本当に削除しますか？"} %> 
       <%= link_to "編集", edit_post_path(post), id:"post_edit"%>
+      <% end %>
     </div>
       <% end %>
   <% end %>
