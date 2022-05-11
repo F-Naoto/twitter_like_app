@@ -7,6 +7,8 @@ before_action :logged_in_user, only:%i[create destroy]
   def show
     @user = User.find(params[:id])
     @posts = Post.where(user_id:@user.id)
+    @comment = Comment.new
+    @comments = Comment.all
   end
 
   def new

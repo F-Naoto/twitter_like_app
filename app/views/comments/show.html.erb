@@ -1,0 +1,7 @@
+<%= @post.content %>
+<% @comments.each do |comment| %>
+<div class="content">
+<%= comment.user.name%>
+<%= comment.comment%>
+</div>
+<% end %>

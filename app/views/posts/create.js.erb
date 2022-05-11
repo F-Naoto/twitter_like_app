@@ -1,0 +1,11 @@
+const SendBtn = document.querySelector("#send_btn");
+const PostField = document.querySelector("#post_field");
+const PostUl = document.querySelector("#post_ul");
+const li = document.createElement("li");
+
+
+SendBtn.addEventListener("click", () => {
+const li2 = li.appendChild(PostField.value);
+PostUl.appendChild(li);
+});
+

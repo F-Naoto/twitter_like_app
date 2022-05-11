@@ -13,17 +13,21 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(content_params)
+    respond_to do |format|
     if @post.save
-      redirect_to current_user
+    format.html {redirect_to current_user}
+    format.js
     else
-      render new_user_path
+    format.html {render new_user_path}
+    format.js
+    end
     end
   end
 
   def edit
     @post = Post.find_by(id:params[:id])
   end
-
+  
   def update
     @post = Post.find_by(id:params[:id])
     @post.update(content_params)
