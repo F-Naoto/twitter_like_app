@@ -1,0 +1,12 @@
+  <% if current_user.following?(@user)%>
+    <%= form_with(url:user_relationships_path(@user), method: :delete, local:true) do |f| %>
+    <%= f.submit :unfollow%>
+    <% end %>
+  <% else %>
+    <%= form_with(url:user_relationships_path(@user), method: :post, local:true) do |f| %>
+    <%= f.submit :follow%>
+    <% end %>
+  <% end %>
+
+
+

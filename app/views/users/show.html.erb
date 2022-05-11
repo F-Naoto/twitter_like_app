@@ -1,6 +1,7 @@
 <%= link_to "ログアウト", logout_path, method: :delete if logged_in?%>
 <div class="container">
   <div class="wrapper">
+  <%= render "follow_form" %>
     <h1 class="title">UserProfilePage</h1>
     <div class="personal_profile">
       <div class="name">Name:<%=@user.name%></div>
