@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :relationships, only:%i[create destroy]
   end
   resources :posts do
+    resource :reviews, only:%i[create]
     resource :favorites, only:%i[create destroy]
     resource :comments, only:%i[show create destroy]
   end

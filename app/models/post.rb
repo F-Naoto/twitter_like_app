@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  belongs_to :review
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   default_scope -> {self.order(created_at: :desc)}
