@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'rooms/show', to:'rooms#show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'home#top'
+  get 'search', to:'posts#search'
   resources :users do
     resource :relationships, only:%i[create destroy]
   end

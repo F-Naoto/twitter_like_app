@@ -40,6 +40,11 @@ class PostsController < ApplicationController
     redirect_to current_user
   end
 
+  def search
+    @search_name = params[:search_name]
+    @posts = Post.where("content LIKE ?", "%#{@search_name}%")
+  end
+
   private
   def content_params
   params.require(:post).permit(:content)

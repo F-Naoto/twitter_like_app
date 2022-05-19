@@ -1,0 +1,8 @@
+<%= form_with(url:search_path, method: :get, local:true) do |f| %>
+<%= f.text_field :search_name, placeholder: 'キーワード' %>
+<%= f.submit "検索"%>
+<% end %>
+
+<% @posts.each do |post| %>
+<div><%= post.content%></div>
+<% end %>
